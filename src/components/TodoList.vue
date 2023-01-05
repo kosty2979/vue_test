@@ -3,7 +3,7 @@
   <div class="todo-list">
     <TodoItem
       v-for="todo in todoList"
-      :key="todo.id"
+      :id="todo.id"
       :todo="todo"
     >
     </TodoItem>

@@ -50,7 +50,7 @@ module.exports = (env = {}) => ({
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: './public/index.html'
+      template: './index.html'
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css'
@@ -58,21 +58,21 @@ module.exports = (env = {}) => ({
     new WebpackBar(),
     new VueLoaderPlugin(),
   ],
-  optimization: {
-    runtimeChunk: 'single',
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-          chunks: 'all'
-        }
-      }
-    }
-  },
+  // optimization: {
+  //   runtimeChunk: 'single',
+  //   splitChunks: {
+  //     cacheGroups: {
+  //       vendor: {
+  //         test: /[\\/]node_modules[\\/]/,
+  //         name: 'vendors',
+  //         chunks: 'all'
+  //       }
+  //     }
+  //   }
+  // },
   devtool: 'source-map',
   devServer: {
-    contentBase: path.join(__dirname, 'src/public'),
+    contentBase: path.join(__dirname, 'src'),
     publicPath: process.env.BASE_URL,
     index: './index.html',
     hot: true,
